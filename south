@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!--
+   New Perspectives on XML
+   Tutorial 2
+   Case Problem 4
+
+   South Racing summary
+   Author: Isaiah Staten
+   Date:  7/17/2024 
+
+   Filename:         south.xml
+   Supporting Files: cars.xml, teams.xml
+-->
+<!DOCTYPE racing SYSTEM "south.xml"
+[
+ <!ELEMENT t:teams (team)*>
+ <!ATTLIST teams xmlns:t CDATA #FIXED "http://example.com/southracing/teams">
+ <!ELEMENT t:team (tittle,description,series)>
+ <!ATTLIST team ID CDATA "tid">
+ <!ATTLIST team cars CDATA "nes201,gda100-5,gma005-2,sob-450V4,hen01-53,dej01-003">
+ <!ELEMENT t:title (#PCDATA)>
+ <!ELEMENT t:description (#PCDATA)>
+ <!ELEMENT t:series (#PCDATA)>
+
+ <!ELEMENT c:cars (car)*>
+ <!ATTLIST cars xmlns:t CDATA #FIXED "http://example.com/southracing/cars">
+ <!ELEMENT c:car (title,model,driver)>
+ <!ATTLIST car ID CDATA "cid">
+ <!ELEMENT c:title (#PCDATA)>
+ <!ELEMENT c:model (#PCDATA)>
+ <!ELEMENT c:driver (#PCDATA)>
+
+ <!ELEMENT racing (t:teams,c:cars)>
+ <!ATTLIST racing xmlns:t CDATA #FIXED "http://example.com/southracing">
+
+ <!ENTITY teamList SYSTEM "http://example.com/southracing/teams">
+ <!ENTITY carslist SYSTEM "http://example.com/southracing/cars">
+
+
+]
+>
+
+
